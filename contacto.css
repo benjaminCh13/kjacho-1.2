@@ -1,0 +1,185 @@
+* { margin: 0; padding: 0 ; box-sizing: border-box;}
+body { font-family: thisregular; font-size: 16px; }
+
+
+/* header MENU
+.................................................................*/
+#nav-menu{position: fixed; z-index: 5;  top: -80px; transition: top 0.3s; }
+
+#nav-menu a {
+  padding: 10px 12px; color: aliceblue;
+ }
+#nav-menu a:hover {
+  color: #55914f;
+  font-weight: bold;
+}
+#nav-menu li.active a { font-weight: bold;}
+
+/* header depliegue del Menu te brindamos */ 
+.dropdown-menu{color:aliceblue; background-color:#2b7523 ; padding-left: 30px;font-size: 1em; }
+
+
+/*.......................................................*/
+/* paddin 0 izquierda y derecha*/
+.padding-0 {padding-left: 0; padding-right: 0;}
+
+/*linea horizontal con el circulo*/
+.circulo{ position: relative; }
+.circ1{ height: 24px; width: 24px; border-radius: 50%; display: inline-block;
+ background-color: #9b1220; }
+.circ2{position: absolute; top: 2px; height: 20px; width: 20px; border-radius: 50%; 
+    display: inline-block; background-color: white; }
+
+
+.kjacho {width: 160px; height: 60px; background-image: url(imagenes/kjacho1.png);
+ background-size: 10em; background-repeat: no-repeat;   background-position: center ; }
+
+
+/*header del contacto
+...........................................*/
+.contenedor-contacto{ position: relative; width: 100%;   height: 100vh;  
+    display: flex; align-items: center; justify-content: center;}
+.titulo-contacto{position: absolute; width: 100%; height: 12%; text-align: center;
+ transform: rotate(-90deg);}
+ .char{ font-family: thisregular; color:white; visibility: inherit; opacity: 1;
+    line-height: 58px; font-size: 90px; letter-spacing: 1px; font-weight: bold;}
+
+
+.form-control{ background-color: #efefef;  border-color: #efefef; }
+/* quitamos el foco de los bordes del formulario
+-------------------------------------------------*/
+.form-control:focus {background-color: #efefef ; border-color: #efefef;
+ 	box-shadow:0 1px 1px #efefef inset, 0 0 8px #efefef;  }
+
+
+/*trabajo cvs
+...........................................*/
+
+.marco-trabajo{ width: 100%; height: 60vh;  }
+/*quitamos el padding de los dos div*/
+.sinpadding .col-xl-6{ padding-left: 0; padding-right: 0; width:  }
+
+.div-verde {background-color: #2c3b0d;}
+.bg-imagen-y-cv{background-color: #e4e9ed;}
+
+
+/*linea vertical y circulo*/
+.lv{ position: relative; border-left: 2px solid #483e32; height: 150px;}
+.dot{ position: relative;  }
+.dot1{ height: 24px; width: 24px; border-radius: 50%; display: inline-block; background-color: #483e32; }
+.dot2{position: absolute; top: 2px;  height: 20px; width: 20px; border-radius: 50%; 
+    display: inline-block; background-color: white; }
+
+
+
+/* PIE DE PAGINA
+....................link contacto.........................*/
+
+.btn-contacto{ position: relative;  border:none; border-radius:4px; font-size: 20px; padding: 4px;
+ width: 80%; text-align: center; -webkit-transition-duration: 0.4s; background-color: #cb0091; 
+ color: white; font-size: 20px;
+/*safary*/ transition-duration: 0.5s; text-decoration: none; overflow: hidden; cursor: pointer; }
+.btn-contacto:after{content: ""; background: #c386ba; display: block;position: absolute;
+padding-top: 300%; padding-left: 350%; margin-left: -20px !important; margin-top: -120%; 
+opacity: 0; transition: all 0.8s;}
+.btn-contacto:hover:after{ padding: 0; margin: 0; opacity: 1; }
+
+
+/*botonn enviar email ........................................*/
+
+.btn-enviar{ border-radius: 4px; background-color:  #cb0091; border:none; color: white; 
+  text-align: center; font-size: 20px;  width: 150px; transition: all 0.5s; 
+  cursor: pointer; margin: 5px;  font-weight: bold; padding: 5px;}
+.btn-enviar span{ cursor: pointer; display: inline-block; position: relative;; transition: 0.5s; }
+.btn-enviar span:after{ content: '\00bb'; position: absolute;opacity: 0; top:0; right: -20px;
+ transition: 0.5s; }  
+.btn-enviar:hover span{padding-right: 25px; }
+.btn-enviar:hover span:after{opacity: 1; right: 0;}
+
+
+
+/* PIE DE PAGINA AVE VOLANDO
+--------------------------------------------------------*/
+.cont-paloma{ position: relative;  }
+.cont-paloma .paloma{ position: absolute; left: 0; top: 80px; }
+.cont-paloma img{ position: relative;  }
+
+.paloma { width: 70px; height: 70px; background-image: url(imagenes/ave.png); 
+    background-size: 6em; background-repeat: no-repeat; margin-right: 70px; }
+
+.paloma{
+  
+animation-duration: 10s;
+  animation-name: slidein;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+   /* 
+   abrebiado seria asi: p {  animation: 3s infinite alternate slidein;}*/
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 85%;
+    width: 15%
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+
+/*PIE DE PAGINA*/
+.pieDePagina a{color: white; }
+.pieDePagina a:hover{ color: #cb0091; }
+
+
+
+/*....................MEDIA
+..........................................................*/
+
+
+/*  IPAD 6/7/8  365---667         IPONHE PLU 5/6/7  414---736*/
+@media (min-width: 280px) and (max-width: 768px){
+
+    body p, h2, h3, h4, h5{ font-size: 95%; }
+/*MENU..........*/
+
+/*header marco del menu*/
+.navbar-collapse{ border: solid 1px #55914f;  }
+.nav-item a:hover { background-color: rgb(85,145,79,0.2); }
+
+            
+/* header depliegue del Menu te brindamos */
+.dropdown-menu{background-color: rgb(85,145,79,0.2); padding-left: 30px;font-size: 1em; color: aliceblue;}
+
+/*header boton del menu*/
+.navbar-toggler{background-color:#2b7523; }
+/*...............................................................*/
+
+/*letras verticlaes*/
+.char{ font-size: 65px; }
+
+/*eliminamos el div de color verde de la hoja de vida*/
+.div-verde {background-color: #483e32;}
+.bg-imagen-y-cv{background-color: #483e32;}
+
+
+/*eliminando la linea vertical */
+.lineaVertical{  display: none;}
+
+/*Palomita volando......... posicion*/
+.cont-paloma .paloma{  left: 0; top: 25px; }
+}
+
+/* sELECCIONAMOS SOLO UNA PARTE DE PANTALLA QUE NO ENTRO ...........................*/
+@media (min-width: 280px) and (max-width: 568px) { 
+  .char{ font-size: 55px; }
+  #nav-menu{  top: -80px;  padding-left: 0; padding-right: 0;}
+
+}
+
+
+
+

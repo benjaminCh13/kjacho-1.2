@@ -1,0 +1,662 @@
+* { margin: 0; padding: 0 ; box-sizing: border-box;}
+
+/*Trabajamos con el import*/
+@import url('https://fonts.googleapis.com/css2?family= Oswald:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family= Teko:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Padauk&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+h1,h6, h4  {font-family: 'Oswald', sans-serif; }
+p { font-family: 'Teko', sans-serif; }
+
+/*font-family: 'Padauk', sans-serif;*/
+/*font-family: 'Anton', sans-serif;*/
+
+/* paddin 0 izquierda y derecha para las columnas*/
+.padding-0 {padding-left: 0; padding-right: 0;}
+
+/* canalon-vertical = g-0 */
+
+
+/*======================================================================
+// LOADING
+//======================================================================*/
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: 1s all;
+  opacity: 0;
+}
+.loading.show {
+  opacity: 1;
+}
+.loading .spin {
+  border: 3px solid hsla(185, 100%, 62%, 0.2);
+  border-top-color: #3cefff;
+  border-radius: 50%;
+  width: 3em;
+  height: 3em;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+to {
+  transform: rotate(360deg);
+}
+} 
+/*...............................termina..................................*/
+
+/*MENU
+----------------------------------------------------*/
+/*.contenedor-menu{ position: -webkit-sticky; position: sticky; top: -1px; z-index: 5; }
+.menu .stiky{ color:#21601e;  } */
+
+#contenedor-menu {position: fixed; z-index: 10; top:0; transition: top 1s; }
+#nav-menu li a { margin: 14px 16px; color: #ec1c24; 
+  width: 80px; height: 35px; position: relative; overflow: hidden; display: block; 
+  text-decoration: none; text-align: center; font-size: 1em ;font-weight: bold;}
+
+#nav-menu li.active a{color:  #42ae3a; font-weight: bold;}
+
+/*Boton del menu*/
+#nav-menu button{ border: solid 2px #ec1c24;  }
+#nav-menu button:hover{background-color: rgb(236,28,36,0.5); border: solid 1.5px #ec1c24; }
+
+#nav-menu li a:hover{color: #42ae3a; }
+
+.menu .nav-a::before {
+  content: '';
+  position: absolute; bottom: 0;  left: 0;  width: 100%;  height: 2px;
+  background: linear-gradient( to right,#ec1c24, #cb0091, #ec1c24 , #eac1dd);
+  z-index: 1;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.7s ease-in-out;
+}
+.menu .nav-a:hover::before {  transform: scaleX(1);}
+
+
+/* Animacion del MENU
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.menu[data-animation="to-left"] a::before {
+  transform-origin: right;
+  transform: scaleX(1);
+  transition-timing-function: cubic-bezier(0.2, 1, 0.82, 0.94);
+}
+
+/*propiedades solamente del CONTACTO
+------------------------------------------------------------------------*/
+.menu .fas{height: 35px; width: 80px; background-image: url(imagenes/menu-c.jpg); background-size: 4.5em;
+background-repeat: no-repeat; background-position: center;  }
+
+.menu a span:last-child {
+  position: absolute;/*superpongo las imagenes/ sin esto aparecen los 2, uno debajo del otro*/
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-100%);/*oculto debajo */
+}
+
+.menu a span {
+  transition: transform 0.2s ease-out;
+}
+ 
+.menu a:hover span:first-child {
+  transform: translateY(100%);
+}
+ 
+.menu a:hover span:last-child {
+  transform: none;
+}
+/* termina aqui------------------------------------------------------*/
+
+/*100% PARA el carrusel  y abajo en medi@ 50vh*/
+.carousel-item .d-block{height: 100vh;}
+
+/*100% PARA las imagenes de fondo, servicios y productos  y abajo en medi@ 50vh*/
+div #serv-img{ height: 120vh;}
+div #prod-img{ height: 120vh;}
+
+/*linea horizontal con el circulo*/
+.circulo{ position: relative; }
+.circ1{ height: 24px; width: 24px; border-radius: 50%; display: inline-block;
+ background-color: #e7463c; }
+.circ2{position: absolute; top: 2px; height: 20px; width: 20px; border-radius: 50%; 
+    display: inline-block; background-color: white; }
+
+.masInfo{ color: #204318; }
+.masInfo:hover{color: #d74f1f;}
+
+
+
+/*Pasion por las plantas
+-----------------------------------------------------------------*/
+.calatea-relativo{   background:#ffffff; overflow: auto;  position: relative; z-index: 2;}
+/*.presentacion-marco{ border-style: solid; border-color: #ffffff; width: 80%; }*/
+.calatea-relativo .calatea-absoluto{ position: absolute; left: 0; top:0; }
+
+/*pasion por las plantas*/
+.titulo-pasion {color: #f6323e;  text-shadow: -1px -1px 1px #578676,
+	1px 1px 1px #578676,-1px 1px 1px #578676, 1px -1px 1px #669e01; 
+font-size: 15em;}
+
+
+/*SERVICIOS
+----------------------------------------------------
+
+/*Nuestros-Servicios
+...............................................*/
+.servicios-relativo{ position: relative; margin:0 auto;  }
+.servicios-relativo .servicios-absoluto{ position: absolute; top: 0; left: 0; width: 97%; }
+
+.content-servicios-izq{  position: relative;
+   background-color: red; background: rgb(0,0,0); background: rgba(0,0,0,0.5); }
+.content-servicios-i{ }
+
+
+.content-servicios-der{     margin: auto; color: white; }
+.content-servicios-d{ text-align: center; top: 50%; left: 50%; transform: translate(-50%, -50%); position:absolute; }
+
+#overlay { position: fixed; display: none; width: 100%; height: 100%; top: 0; left: 0; bottom: 0;
+ right: 0; background-color:  rgba(0,0,0,0.5); z-index: 2; cursor: pointer;}
+
+/* Letra Mecanografia Como Trabajamos*/
+.titulo-trabajamos .tipoLetra {
+  font-weight: bold;
+  color: #89b77c;
+  font-style: normal;
+}
+.titulo-trabajamos{ font-size: 3.5em; font-family:'Anton' !important; font-weight: bold; text-transform: uppercase;}
+.subtitulo-trabajamos{ font-size: 1.2em; font-family:'Anton' !important; font-weight: bold; color: #89b77c; }
+
+/* Letra Mecanografia porque elegirnos*/
+.titulo-elegirnos .tipoLetra1 {
+  font-weight: bold;
+  color: #bb6071;
+  font-style: normal;
+}
+.titulo-elegirnos{ font-size: 3.5em; font-family:'Anton' !important; font-weight: bold; text-transform: uppercase;}
+.subtitulo-elegirnos{ font-size: 1.2em; font-family:'Anton' !important; font-weight: bold; color: #bb6071; }
+
+.titulo-ns{ font-size: 3.5em; font-family:'Anton' !important; font-weight: bold; text-transform: uppercase;}
+.subtitulo-ns{ font-size: 1.2em; font-family:'Anton' !important; font-weight: bold; color: #eb821c; }
+
+
+
+.comoTrabajamos{ margin-left: 50px; text-align: left; color: #93e12e; }
+.somosEspecialistas{text-transform: uppercase; background: rgba(0,0,0,0.8); }
+.servicio-h{ color: #93e12e; font-size: 1.2em; text-transform: uppercase; font-weight: bold; }
+.servicio-p{ color: white; font-size: 1em; }
+
+/*...............6 servicios..................*/
+.servicio { position: relative;}
+.servicio .mascara {position: absolute;}
+.servicio img {position: relative;}
+.servicio h2 {text-transform: uppercase;  text-align: center; position: relative;
+ padding: 8px; border-bottom-style: solid; border-top-style: solid; border-color: white  ; }
+.servicio p {font-size: 1em; position: relative; color: white; padding: 10px 20px 10px;
+	text-align: center; background-color: black;}
+
+/**/
+.servicio-img img {
+transition: all 0.2s linear;
+}
+.servicio-card:hover { background-color: #222222; color: white;}/* para toda la targeta*/
+
+
+.servicio-img p {
+transform: translateX(20px);/*Desplazamos a la derecha*/
+opacity: 0;
+transition: all 0.4s linear;
+}
+.servicio-img:hover p {
+opacity: 1;
+transform: translateX(0px);/*Regresamos a las posiciones originales*/
+}
+
+.servicio-img:hover p {
+transition-delay: 0.1s;
+}
+.servicio-img:hover {
+transition-delay: 0.6s; /*Aplicamos un pequeño retardo para que se muestre al final*/
+transform: translateY(0px);
+}
+
+
+
+
+/*PRODUCTOS
+.....................................................................*/
+
+  /*Nuestros - Productos*/
+
+.nuestros-productos img{ width: 100%; height: 100%; }
+
+
+.nuestros-productos{ position: relative; margin:0 auto;  }
+.nuestros-productos .content{ position: absolute; bottom:0; left: 0; top: 0; width: 100%;  }
+
+.content-productos-izq{  color: white;  margin: auto; }
+.content-productos-i{ text-align: center;top: 50%; left: 50%;  transform: translate(-50%, -50%); 
+    margin-top: 20px ; overflow: inherit; }
+
+.content-productos-der{right: -15px;  background: rgb(0,0,0); background: rgba(0,0,0,0.5);  }
+.content-productos-d{width: 100%; margin: auto; }
+
+
+
+
+.espacioVerde{text-transform: uppercase; background: rgba(0,0,0,0.8); }
+.producto-h{ color: white; font-size: 1.2em; text-transform: uppercase; font-weight: bold; }
+.producto-p{ color: white; font-size: 1em; }
+
+
+
+
+/*8 productos.....................*/
+.producto {
+
+position: relative;
+text-align: center;
+background: #fff;
+}
+.producto .mascara-pro,.producto .producto-img {
+position: absolute;
+
+}
+.producto img {
+display: block;
+position: relative;
+
+}
+.producto h5 {
+text-transform: uppercase;
+color: #fff;
+text-align: center;
+position: relative;
+font-size: 16px;
+padding: 8px;
+background: rgba(0, 0, 0, 0.7);
+margin: 0
+}
+.producto p {
+position: relative;
+color: #fff;
+text-align: center
+}
+.producto a.link-pro {
+display: inline-block;
+text-decoration: none;
+padding: 7px 14px;
+background: #222;
+color: #fff;
+text-transform: uppercase;
+}
+
+/*efectos PRODUCTOS*/
+
+
+.producto-img a.link-pro{
+opacity: 0;
+transition: all 0.4s ease-in-out;
+transform: translateY(80px)/*Desplazamos para abajo*/
+}
+
+.producto-img:hover .card-img{-webkit-transform:scale(1.3);transform:scale(1.3);}
+.producto-img {overflow:hidden;}/* hacemos un zoom a la imagen*/
+
+.producto-img:hover .mascara-pro {
+opacity: 1;
+}
+
+.producto-img:hover a.link-pro {
+opacity: 1;
+transform: translateX(0px);/*Regresamos a las posiciones originales*/
+}
+
+.producto-img:hover a.link-pro {
+transition-delay: 0.2s; /*Aplicamos un pequeño retardo para que se muestre al final*/
+transform: translateY(-20px);
+}
+
+
+
+
+
+/*REDES SOCIALES F, i, t*/
+
+.cont-redes{ position: relative;  }
+.cont-redes img{ position: relative; }
+.cont-redes p{color: white; position: absolute; left:5%;top: 3%;}
+.cont-redes .red{ position: absolute; left: 25%; top: 40%; }
+
+.red { position: absolute; width: 50% ;display: flex; justify-content: space-around;}
+.red a{   background-image: url(imagenes/redesSociales.png); 
+	width: 62px;height: 60px;   background-size: 12em;  }
+.redes-f { background-position: 8px 0;  }
+.redes-i { background-position: -53px 0; }
+.redes-t { background-position: -120px 0; }
+.redes-f:hover { background-position: 10px -60px;  }
+.redes-i:hover { background-position: -53px -59px; }
+.redes-t:hover { background-position: -120px -59px; }
+
+
+/*CONTACTO DE WHATSAPP
+------------------------------------------------------*/
+.btn-wsp{
+  position:fixed;
+  width:60px;
+  height:60px;
+  line-height: 63px;
+  bottom:25px;
+  right:25px;
+  background:#25d366;
+  color:#FFF;
+  border-radius:50px;
+  text-align:center;
+  font-size:35px;
+  box-shadow: 0px 1px 10px rgba(0,0,0,0.3);
+  z-index:100;
+  transition: all 300ms ease;
+}
+.btn-wsp:hover{
+  background: #20ba5a;
+}
+@media only screen and (min-width:320px) and (max-width:768px){
+  .btn-wsp{
+      width:63px;
+      height:63px;
+      line-height: 66px;
+}
+}
+
+
+
+/*link a contacto SERVICIOS y contacto PIE DE PAGINA
+.............................................*/
+
+div .btn-contacto{background-color: #cb0091; position: relative;  border:none; border-radius:4px; font-size: 20px; padding: 4px;
+ width: 80%; text-align: center; -webkit-transition-duration: 0.4s; 
+ color: white; font-size: 20px; 
+/*safary*/ transition-duration: 0.5s; text-decoration: none; overflow: hidden; cursor: pointer; }
+.btn-contacto:after{content: ""; background: #c386ba; display: block;position: absolute;
+padding-top: 300%; padding-left: 350%; margin-left: -20px !important; margin-top: -120%; 
+opacity: 0; transition: all 0.8s;}
+.btn-contacto:hover:after{ padding: 0; margin: 0; opacity: 1; }
+
+
+/*BOTON enviar email........................................*/
+
+.btn-enviar{ border-radius: 4px; background-color:  #cb0091; border:none; color: white; 
+  text-align: center; font-size: 20px;  width: 150px; transition: all 0.5s; 
+  cursor: pointer; margin: 5px;  font-weight: bold; padding: 5px;}
+.btn-enviar span{ cursor: pointer; display: inline-block; position: relative;; transition: 0.5s; }
+.btn-enviar span:after{ content: '\00bb'; position: absolute;opacity: 0; top:0; right: -20px;
+ transition: 0.5s; }  
+.btn-enviar:hover span{padding-right: 25px; }
+.btn-enviar:hover span:after{opacity: 1; right: 0;}
+
+
+
+/*boton hacia arriba...............................................*/
+#myboton{ display: none; position: fixed; bottom: 20px; left: 50%; z-index: 10; 
+  border: none; outline: none; background-color: red; color: white; cursor: pointer;
+  padding: 15px; border-radius: 10px; font-size: 18px; }
+#myboton:hover{ background-color: #555; }
+
+/*...................................................................*/
+
+/*linea vertical y circulo*/
+.lv{ position: relative; border-left: 4px solid #2a8871; height: 150px;}
+.dot{ position: relative; }
+.dot1{ height: 25px; width: 25px; border-radius: 50%; display: inline-block; background-color: #2a8871; }
+.dot2{position: absolute; top: 2px; height: 20px; width: 20px; border-radius: 50%; 
+    display: inline-block; background-color: white; }
+
+/* PIE DE PAGINA AVE VOLANDO
+--------------------------------------------------------*/
+.cont-paloma{ position: relative;  }
+.cont-paloma .paloma{ position: absolute; left: 0; top: 80px; }
+.cont-paloma img{ position: relative;  }
+
+.paloma { width: 70px; height: 70px; background-image: url(imagenes/ave.png); 
+	background-size: 6em; background-repeat: no-repeat; margin-right: 70px; }
+
+.paloma{
+  
+animation-duration: 10s;
+  animation-name: slidein;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+   /* 
+   abrebiado seria asi: p {  animation: 3s infinite alternate slidein;}*/
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 85%;
+    width: 15%
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+
+/*PIE DE PAGINA*/
+.navbar-nav a{color: white; }
+.navbar-nav a:hover{ color: #cb0091; }
+.boton a:hover{ color: #111d00; }
+
+
+
+/*MEDIA
+--------------------------------------------------*/
+
+  
+  
+  @media ( max-width: 992px ){ /*IPAD 768----1024     IPHONE 10 375---812*/
+  
+    /*pasion por las plantas*/
+    .presentacion-titulo span{ font-size: 0.6em; }
+
+  
+    .servicio-img p {
+  transform: translateX(80px);}
+  
+  /*redes sociales*/
+  
+  .red a{   background-image: url(imagenes/redesSociales.png); 
+    width: 65px;height: 59px;   }
+  .redes-f { background-position: 8px 0;  }
+  .redes-i { background-position: -60px -2; }
+  .redes-t { background-position: -122px 0; }
+  
+  }
+  
+  @media ( max-width: 768px ){/*  IPONHE 6/7/8  365---667         IPONHE PLU 6/7/8  414---736*/
+  body p, h2, h3, h4, h5{ font-size: 80%; }
+
+  .kjacho-empresa{font-size: 70%;}
+
+  /*mitad de 100 para el carrusel*/
+  .carousel-item .d-block{height: 70vh;}
+
+  subtitulo-elegirnos
+  /*pasion por las plantas*/
+    .presentacion-titulo span{ font-size: 0.3em; }
+    .presentacion-kjacho{font-size: 0.7em;}
+  
+  /*letras de servicios*/
+  .servicio-h{  font-size: 1em;  }
+  .servicio-p{ font-size: 0.7em; }
+  /*.comoTrabajamos p{font-size: 1.2em;}*/
+  .content-servicios-d h4{ font-size: 1.2em; }
+  
+  /*servicios */
+  
+  .content-servicios-i{width: 100%; margin: auto; }
+  .contacto-descrip h5 span{ font-size: 24px; }
+  
+  /*productos*/
+  .producto-h{  font-size: 1em; }
+  .producto-p{ font-size: 0.7em; }
+  .content-productos-d { margin-top: -80px; margin-left: -15px; }
+  
+  .servicio-img p {transform: translateX(35px);}
+  
+/*titulos y subtitulos de nuestros productos y servicios*/
+  .titulo-ns{ font-size: 3em; }
+  .subtitulo-ns{ font-size: 0.5em;  }
+
+  
+  .titulo-trabajamos{ font-size: 2.5em; }
+  .subtitulo-trabajamos{ font-size: 0.5em; }
+  
+  .titulo-elegirnos{ font-size: 2.5em; }
+  .subtitulo-elegirnos{ font-size: 0.5em;  }
+  
+
+.typed{font-size: 75%;}
+.typed1{font-size: 85%;}
+
+/* pasion por las plantas*/
+  .titulo-pasion{ font-size: 10em;}
+
+  /*REDES SOCIALES*/.contenedor-redes p{ font-size: 1.5em; }
+  .cont-paloma .paloma{  left: 0; top: 25px; }
+  
+  .servicio-subt-p1::before p {font-size: 4vh;}
+  
+  .subtitulo-p2 p{ font-size: 2.5vw; }/*subtitulo de servicios y productos*/
+
+  /*pading porque legirno?  para la confianza */
+  .confianza{padding-top: 40px;}
+      }
+
+      
+  
+/*GALAXI Y MOTO  360 ---640    IPHONE 5/SE 320---568 */
+      /* `sm` applies to x-small devices (portrait phones, less than 576px)*/
+      @media (max-width: 575.98px) { 
+        body{ font-size: 80%; }
+  
+        body p, h2, h3, h4, h5{ font-size: 80%; }
+        
+/*mitad de 100 para el carrusel*/
+        .carousel-item .d-block{height: 50vh;}
+
+
+      /*letras de servicios*/
+      .servicio-h{  font-size: 1em;  }
+      .servicio-p{ font-size: 0.7em; }
+      /*.comoTrabajamos h3 {font-size: 1.4em;}*/
+      .comoTrabajamos p{font-size: 0.4em;}
+      .content-servicios-d h4{ font-size: 1em; }
+
+
+
+ /* subtitulos de  porque elegirnos?, como trabajamos ? y productos y servicios*/
+  .subtitulo-elegirnos{ font-size: 0.4em;  }
+
+  .subtitulo-trabajamos{ font-size: 0.4em; }
+
+  .subtitulo-ns{ font-size: 0.4em;  }
+
+.typed{font-size: 70%;}
+.typed1{font-size: 75%;}
+
+
+/*servicios y productos*/
+.iphon5-servicios-none{ display: none;}
+.iphon-productos-none {display: none;}
+.iphon-absoluto{ position: absolute; top:  -200px;}
+
+/*100% PARA las imagenes de fondo, servicios y productos  y abajo en medi@ 50vh*/
+div #serv-img{ height: 80vh;}
+div #prod-img{ height: 80vh;}
+       }
+
+       
+/*Iphone 5 solamente*/
+
+       @media (device-height : 568px) 
+   and (device-width : 320px) 
+   and (-webkit-min-device-pixel-ratio: 2)
+/* and (orientation : todo: you can add orientation or delete this comment)*/ {
+
+  /*mitad de 100 para el carrusel*/
+  .carousel-item .d-block{height: 50vh;}
+
+
+  /*servicios y productos*/
+.iphon5-servicios-none{ display: none;}
+.iphon-productos-none {display: none;}
+.iphon-absoluto{ position: absolute; top:  -200px;}
+
+
+/*100% PARA las imagenes de fondo, servicios y productos  y abajo en medi@ 50vh*/
+div #serv-img{ height: 120vh;}
+div #prod-img{ height: 120vh;}
+
+                 /*IPhone 5 only CSS here*/
+}
+
+@media (min-width: 280px) and (max-width: 653px) { 
+  body p, h2, h3, h4, h5{ font-size: 80%; }
+  .typed{font-size: 60%;}
+  .typed1{font-size: 70%;}
+
+  /*100% PARA las imagenes de fondo, servicios y productos  y abajo en medi@ 50vh*/
+div #serv-img{ height: 120vh;}
+div #prod-img{ height: 120vh;}
+
+}
+
+
+@media (min-width: 540px) and (max-width: 720px) { 
+  /* cimagen de como trabajamos: 100% para la foto y abajao em media@ 50%*/
+  /*100% PARA las imagenes de fondo, servicios y productos  y abajo en medi@ 50vh*/
+div #serv-img{ height: 80vh;}
+div #prod-img{ height: 80vh;}
+  }
+      @media (min-width: 375px) and (max-width: 812px) { 
+        /*100% PARA las imagenes de fondo, servicios y productos  y abajo en medi@ 50vh*/
+div #serv-img{ height: 80vh;}
+div #prod-img{ height: 80vh;}
+        }
+        @media (min-width: 414px) and (max-width: 736px) { 
+        /*100% PARA las imagenes de fondo, servicios y productos  y abajo en medi@ 50vh*/
+div #serv-img{ height: 80vh;}
+div #prod-img{ height: 80vh;}
+
+
+          }
+          @media (min-width: 375px) and (max-width: 667px) { 
+  /*100% PARA las imagenes de fondo, servicios y productos  y abajo en medi@ 50vh*/
+  div #serv-img{ height: 90vh;}
+  div #prod-img{ height: 90vh;}
+            }
+            @media (min-width: 411px) and (max-width: 823px) { 
+               /*100% PARA las imagenes de fondo, servicios y productos  y abajo en medi@ 50vh*/
+  div #serv-img{ height: 80vh;}
+  div #prod-img{ height: 80vh;}
+              }
+              @media (min-width: 411px) and (max-width: 731px) { 
+
+                }
+                @media (min-width: 360px) and (max-width: 640px) { 
+                  
+                  }

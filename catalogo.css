@@ -1,0 +1,202 @@
+* { margin: 0; padding: 0 ; box-sizing: border-box;}
+
+/*Trabajamos con el import*/
+@import url('https://fonts.googleapis.com/css2?family= Oswald:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family= Teko:wght@600&display=swap');
+body { font-family: thisregular; font-size: 16px; }
+h1,h6  {font-family: 'Oswald', sans-serif; }
+p { font-family: 'Teko', sans-serif; }
+
+
+/* header MENU
+.................................................................*/
+#nav-menu{position: fixed; z-index: 5;  top: -80px; transition: top 0.3s; }
+
+#nav-menu a {
+  padding: 10px 12px; color: aliceblue;
+ }
+#nav-menu a:hover {
+  color: #55914f;
+  font-weight: bold;
+}
+#nav-menu li.active a { font-weight: bold;}
+
+/* header depliegue del Menu te brindamos */ 
+.dropdown-menu{color:aliceblue; background-color:#2b7523 ; padding-left: 30px;font-size: 1em; }
+
+
+/*.......................................................*/
+
+/*padding izquierda y derecha*/
+.padding-0 {padding-left: 0; padding-right: 0;}
+
+
+/*linea horizontal con el circulo*/
+.circulo{ position: relative; }
+.circ1{ height: 24px; width: 24px; border-radius: 50%; display: inline-block;
+ background-color: #ea294d; }
+.circ2{position: absolute; top: 2px; height: 20px; width: 20px; border-radius: 50%; 
+    display: inline-block; background-color: white; }
+
+
+.kjacho {width: 160px; height: 60px; background-image: url(imagenes/kjacho1.png);
+ background-size: 10em; background-repeat: no-repeat;   background-position: center ; }
+
+
+/*catalogo/ Convierte ese rincocito de tu casa 
+..................................*/
+
+.contenedor-catalogo { position: relative; width: 100%;   height: 100vh;  
+    display: flex; align-items: center; justify-content: center;  }
+
+.sub-titulo{ position: absolute; width: 100%; height: 12%; text-align: center;
+ transform: rotate(-90deg);}
+
+.char{ font-family: thisregular; color: white; text-shadow: -1px -1px 1px #f6f2f2,
+	1px 1px 1px #faf5f6,-1px 1px 1px #f5f1f1, 1px -1px 1px #f7f5f5; visibility: inherit; opacity: 1;
+    line-height: 58px; font-size: 90px; letter-spacing: 1px; font-weight: bold;}
+
+
+
+.card-body{ text-align: center; }
+
+
+
+/*CATALOGO Navs & tabs
+.........................................................................*/
+#catalogo {
+  overflow: visible;
+  background-color: #121a0f;
+  z-index:;
+}
+
+#catalogo button {
+  color: white;
+  padding: 14px 16px;
+  font-size: 17px;
+}
+
+#catalogo button:hover {
+  background-color: #cc2e44;
+  color: #bdf1d6;
+  font-weight: bold;
+
+}
+
+#catalogo  button.active  {
+  background-color: #cc2e44;
+  color: #bdf1d6;
+  font-weight: bold;
+}
+
+
+
+
+/*linea vertical y circulo*/
+.lv{ position: relative; border-left: 2px solid #0151b3; height: 150px;}
+.dot{ position: relative; }
+.dot1{ height: 24px; width: 24px; border-radius: 50%; display: inline-block; background-color: #0151b3; }
+.dot2{position: absolute; top: 2px; height: 20px; width: 20px; border-radius: 50%; 
+    display: inline-block; background-color: white; }
+
+
+/* PIE DE PAGINA 
+--------------------------------------------------------*/
+
+/*Ave volando*/
+.cont-paloma{ position: relative;  }
+.cont-paloma .paloma{ position: absolute; left: 0; top: 80px; }
+.cont-paloma img{ position: relative;  }
+
+.paloma { width: 70px; height: 70px; background-image: url(imagenes/ave.png); 
+    background-size: 6em; background-repeat: no-repeat; margin-right: 70px; }
+
+.paloma{
+  
+animation-duration: 10s;
+  animation-name: slidein;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+   /* 
+   abrebiado seria asi: p {  animation: 3s infinite alternate slidein;}*/
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 85%;
+    width: 15%
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+
+
+/*
+..........Pie de pagina, boton contacto.........*/
+
+.btn-contacto{ position: relative;  border:none; border-radius:4px; font-size: 20px; padding: 4px;
+  width: 80%; text-align: center; -webkit-transition-duration: 0.4s; background-color: #cb0091; 
+  color: white; font-size: 20px;
+ /*safary*/ transition-duration: 0.5s; text-decoration: none; overflow: hidden; cursor: pointer; }
+ .btn-contacto:after{content: ""; background: #c386ba; display: block;position: absolute;
+ padding-top: 300%; padding-left: 350%; margin-left: -20px !important; margin-top: -120%; 
+ opacity: 0; transition: all 0.8s;}
+ .btn-contacto:hover:after{ padding: 0; margin: 0; opacity: 1; }
+ 
+ 
+ /* Pie de pagina BOTON enviar email........................................*/
+  
+ 
+ .btn-enviar{ border-radius: 4px; background-color:  #cb0091; border:none; color: white; 
+   text-align: center; font-size: 20px;  width: 150px; transition: all 0.5s; 
+   cursor: pointer; margin: 5px;  font-weight: bold; padding: 5px;}
+ .btn-enviar span{ cursor: pointer; display: inline-block; position: relative;; transition: 0.5s; }
+ .btn-enviar span:after{ content: '\00bb'; position: absolute;opacity: 0; top:0; right: -20px;
+  transition: 0.5s; }  
+ .btn-enviar:hover span{padding-right: 25px; }
+ .btn-enviar:hover span:after{opacity: 1; right: 0;}
+
+/*PIE DE PAGINA/ nav de servivios, nosotros y catalogo*/
+.pieDePagina a{color: white; }
+.pieDePagina a:hover{ color: #cb0091; }
+.boton a:hover{ color: #111d00; }
+
+
+/*  .................................MEDIA..........................*/
+
+/*  IPAD 6/7/8  365---667         IPONHE PLU 5/6/7  414---736*/
+@media ( max-width: 768px ){
+
+  /*header marco del menu*/
+  .navbar-collapse{ border: solid 1px #55914f;  }
+  .nav-item a:hover { background-color: rgb(85,145,79,0.2); }
+  
+              
+  /* header depliegue del Menu te brindamos */
+.dropdown-menu{background-color: rgb(85,145,79,0.2); padding-left: 30px;font-size: 1em; color: aliceblue;}
+
+  /*header boton del menu*/
+  .navbar-toggler{background-color:#2b7523; }
+  
+  
+ .char{ font-size: 70px; }
+/*linea vertical*/
+.lv{  height: 100px;}
+
+/*Palomita volando......... posicion*/
+.cont-paloma .paloma{  left: 0; top: 25px; }
+}
+
+/* sELECCIONAMOS SOLO UNA PARTE DE PANTALLA QUE NO ENTRO ...........................*/
+@media (min-width: 280px) and (max-width: 568px) { 
+  .char{ font-size: 60px; }
+  #nav-menu{  top: -80px;  padding-left: 0; padding-right: 0;}
+
+}
+
+
+

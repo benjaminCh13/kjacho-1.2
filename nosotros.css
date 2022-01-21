@@ -1,0 +1,267 @@
+* { margin: 0; padding: 0 ; box-sizing: border-box; }
+html{ scroll-behavior: smooth; }
+body { font-family: thisregular; font-size: 16px; }
+
+/*imagen de nuestros servicios, productos, nosotros*/
+.cambio-imagen{width: 100%; height: 110vh;}
+
+/* header MENU
+.................................................................*/
+#nav-menu{position: fixed; z-index: 5;  top: -80px; transition: top 0.3s; }
+
+#nav-menu a {
+  padding: 10px 12px; color: aliceblue;
+ }
+#nav-menu a:hover {
+  color: #55914f;
+  font-weight: bold;
+}
+#nav-menu li.active a { font-weight: bold;}
+
+/* header depliegue del Menu te brindamos */ 
+.dropdown-menu{color:aliceblue; background-color:#2b7523 ; padding-left: 30px;font-size: 1em; }
+
+/*.......................................................*/
+
+
+.kjacho {width: 160px; height: 60px; background-image: url(imagenes/kjacho1.png);
+ background-size: 9em; background-repeat: no-repeat;   background-position: center ; margin: auto;}
+
+/*linea horizontal con el circulo*/
+.circulo{ position: relative; }
+.circ1{ height: 24px; width: 24px; border-radius: 50%; display: inline-block;
+ background-color:#1b6b00; }
+.circ2{position: absolute; top: 2px; height: 20px; width: 20px; border-radius: 50%; 
+    display: inline-block; background-color: white; }
+
+
+
+/*.contenedor-p{ position: relative; width: 100%;   height: 100vh;  border-style: solid;  
+    display: flex; align-items: center; justify-content: center;}*/
+
+/*Acerca de nosotros/letra vertical con imgen
+..........................................................*/
+.contenedor-derecha{ position: relative; width: 100%;   height: 100vh;   
+    display: flex; align-items: center; justify-content: center;}
+.titulo-pag{position: absolute; width: 100%; height: 12%; text-align: center;
+ transform: rotate(-90deg); }
+.char{ font-family: thisregular; color:white; visibility: inherit; opacity: 1;
+    line-height: 58px; font-size: 90px; letter-spacing: 1px; font-weight: bold;}
+
+
+
+/*presentacion de inicio, productos y servicios background: linear-gradient( to right,1,0,0,0); */
+
+.nosotros-marco{ text-transform: uppercase; letter-spacing: 0.5em; background-color: rgb(0,0,0, 0.5);
+text-align: right; }
+.nosotros-t h2{ font-size: 1.8em; color: white; text-align: left; }
+.nosotros-s:hover {color: white;}
+
+.pildora{font-weight: bold; color: aliceblue; }
+
+/*padding izquierda y derecha*/
+.padding-0 {padding-left: 0; padding-right: 0;}
+
+/*Objetivo y biografia de Jose*/
+.biografia-relativo{ position: relative; height: 400px; }
+.biografia-relativo .biografia-absoluto{ position: absolute; left: 20%; top:130px; z-index: 3 }
+
+/*.borde-biografia { position: absolute; left: 20%; top:130px; z-index: 3; }*/
+
+div .margen-ing{ background-color:#0275e2; }
+
+
+/*contactactanos, concreta tus ideas*/
+.contactanos-relativo {position: relative; }
+.contactanos-relativo .contactanos-absoluto { position: absolute; left: 20%; top:130px; z-index: 3; }
+
+.contacto-h:hover{ color: white; }
+
+/*linea vertical y circulo*/
+.lv{ position: relative; border-left: 4px solid #2a8871; height: 150px;}
+.dot{ position: relative; }
+.dot1{ height: 25px; width: 25px; border-radius: 50%; display: inline-block; background-color: #2a8871; }
+.dot2{position: absolute; top: 2px; height: 20px; width: 20px; border-radius: 50%; 
+    display: inline-block; background-color: white; }
+
+
+
+/* PIE DE PAGINA 
+--------------------------------------------------------*/
+
+/*Ave volando*/
+.cont-paloma{ position: relative;  }
+.cont-paloma .paloma{ position: absolute; left: 0; top: 80px; }
+.cont-paloma img{ position: relative;  }
+
+.paloma { width: 70px; height: 70px; background-image: url(imagenes/ave.png); 
+    background-size: 6em; background-repeat: no-repeat; margin-right: 70px; }
+
+.paloma{
+  
+animation-duration: 10s;
+  animation-name: slidein;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+   /* 
+   abrebiado seria asi: p {  animation: 3s infinite alternate slidein;}*/
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 85%;
+    width: 15%
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+
+/*pie de pagina, sobre nosotros*/
+.pieDePagina a{color: white; }
+.pieDePagina a:hover{ color: #cb0091; }
+
+/* Pie de pagina, boton contacto.........................*/
+
+.btn-contacto{ position: relative;  border:none; border-radius:4px; font-size: 20px; padding: 4px;
+  width: 80%; text-align: center; -webkit-transition-duration: 0.4s; background-color: #cb0091; 
+  color: white; font-size: 20px;
+ /*safary*/ transition-duration: 0.5s; text-decoration: none; overflow: hidden; cursor: pointer; }
+ .btn-contacto:after{content: ""; background: #c386ba; display: block;position: absolute;
+ padding-top: 300%; padding-left: 350%; margin-left: -20px !important; margin-top: -120%; 
+ opacity: 0; transition: all 0.8s;}
+ .btn-contacto:hover:after{ padding: 0; margin: 0; opacity: 1; }
+ 
+ 
+ /* Pie de pagina BOTON enviar email........................................*/
+ 
+ .btn-enviar{ border-radius: 4px; background-color:  #cb0091; border:none; color: white; 
+   text-align: center; font-size: 20px;  width: 150px; transition: all 0.5s; 
+   cursor: pointer; margin: 5px;  font-weight: bold; padding: 5px;}
+ .btn-enviar span{ cursor: pointer; display: inline-block; position: relative;; transition: 0.5s; }
+ .btn-enviar span:after{ content: '\00bb'; position: absolute;opacity: 0; top:0; right: -20px;
+  transition: 0.5s; }  
+ .btn-enviar:hover span{padding-right: 25px; }
+ .btn-enviar:hover span:after{opacity: 1; right: 0;}
+ 
+
+ 
+/*...................MEDIA..................
+...................................................................................*/
+ 
+/*IPAD 768----1024     IPHONE 10 375---812*/
+@media ( max-width: 992px ){ 
+  body p, h2, h3, h4, h5{ font-size: 80%; }
+
+.cont-acercad{ margin-bottom: 50px; }
+.objetivo .historia{  left: 20%; top:0px; z-index: 3 }
+
+/*presentacion de inicio, servicios y productos..... pading para subir arriba*/
+.nosotros-presentacion{ top: -100px; margin-bottom: -100px;}
+
+}
+
+
+
+/*  IPAD 6/7/8  365---667         IPONHE PLU 5/6/7  414---736*/
+@media ( max-width: 768px ){
+
+/*header marco del menu*/
+.navbar-collapse{ border: solid 1px #55914f;  }
+.nav-item a:hover { background-color: rgb(85,145,79,0.2); }
+
+            
+/* header depliegue del Menu te brindamos */
+.dropdown-menu{background-color: rgb(85,145,79,0.2); padding-left: 30px;font-size: 1em; color: aliceblue;}
+
+/*header boton del menu*/
+.navbar-toggler{background-color:#2b7523; }
+
+
+.char{ font-size: 70px; }
+
+/*contacto cuadro*/
+.contactanos-relativo{ top: -200px;}
+.biografia-relativo{ margin-top: -100px;}
+
+
+
+
+/*linea vertical*/
+.lineaVertical{ display: none;}
+.cont-paloma .paloma{  left: 0; top: 25px; }
+
+}
+
+
+/*GALAXI Y MOTO  360 ---640    IPHONE 5/SE 320---568 */
+@media ( max-width: 572px ){
+
+  
+  /*Diseñamos y plantamos/ tamaño de letra disminuido */
+  .nosotros-t h2{ font-size: 1.5em;} 
+}
+
+/*Iphone 5 solamente*/
+
+@media (device-height : 568px) 
+and (device-width : 320px) 
+and (-webkit-min-device-pixel-ratio: 2)
+/* and (orientation : todo: you can add orientation or delete this comment)*/ {
+
+  body p, h2, h3, h4, h5{ font-size: 80%; }
+
+              /*IPhone 5 only CSS here*/
+
+  /* Letra de diseñamos y plantamos*/
+.nosotros-t h2{ font-size: 1.2em;  }
+.char{ font-size: 65px; }
+
+ /*imagen de nuestros servicios, productos, nosotros*/
+ .cambio-imagen{ height: 110vh;}
+}
+
+
+/* sELECCIONAMOS SOLO UNA PARTE DE PANTALLA QUE NO ENTRO ...........................*/
+@media (min-width: 280px) and (max-width: 319px) { 
+  body p, h2, h3, h4, h5{ font-size: 80%; }
+
+  #nav-menu{  top: -80px;  padding-left: 0; padding-right: 0;}
+
+  .nosotros-t h2{ font-size: 1em;  }
+  .borde-biografia{ margin-top: -40px;}
+  .char{ font-size: 55px; }
+
+  /*imagen de nuestros servicios, productos, nosotros*/
+.cambio-imagen{ height: 100vh;}
+}
+
+@media (min-width: 540px) and (max-width: 720px) { 
+ 
+  }
+@media (min-width: 375px) and (max-width: 812px) { 
+
+        }
+@media (min-width: 414px) and (max-width: 736px) { 
+       
+
+
+          }
+@media (min-width: 375px) and (max-width: 667px) { 
+ 
+            }
+@media (min-width: 411px) and (max-width: 823px) { 
+ /*imagen de nuestros servicios, productos, nosotros*/
+ .cambio-imagen{ height: 80vh;}
+              }
+@media (min-width: 411px) and (max-width: 731px) { 
+ /*imagen de nuestros servicios, productos, nosotros*/
+ .cambio-imagen{ height: 90vh;}
+                }
+@media (min-width: 360px) and (max-width: 640px) { 
+         /*imagen de nuestros servicios, productos, nosotros*/
+ .cambio-imagen{ height: 100vh;}          
+                  }
